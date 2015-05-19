@@ -26,6 +26,7 @@
     "lodash": "3.x.x"
   },
   "devDependencies": {
-    "mocha": "2.2.x"
+    "mocha": "2.2.x",
+    "chai": "2.3.x"
   }
 }
