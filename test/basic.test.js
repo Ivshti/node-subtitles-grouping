@@ -3,7 +3,7 @@ var should = require("chai").should(),
 
 var fs = require("fs");
 
-var parseSrt = require("../lib/srt");
+var parseSrt = require("../lib/srt").parseString;
 
 describe("srt", function() {
 	it("parse srt file to retrieve the timestamps", function(done) {
@@ -17,5 +17,10 @@ describe("srt", function() {
 
 		done();
 	});
+
+});
+
+
+describe("grouping", function() {
 
 });
