@@ -38,8 +38,12 @@ describe("heatmap", function() {
 // http://dl.opensubtitles.org/en/download/filead/src-api/vrf-07a4118f99/sid-hde04ngpuvva7nqkddrukas676/1952452279.gz
 describe("retriever", function() {
 	it("retrieve srt (local file)", function(done) {
-		// TODO
-		done();
+		retrieve("./test/theoffice.srt", function(err, sub) {
+			assert.isNull(err);
+			assert.isDefined(sub);
+			assert.isTrue(typeof(sub)=="string");
+			done();
+		})
 	});
 
 	it("retrieve srt from zip", function(done) {
