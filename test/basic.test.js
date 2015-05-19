@@ -4,6 +4,7 @@ var should = require("chai").should(),
 var fs = require("fs");
 
 var parseSrt = require("../lib/srt").parseString;
+var heatmap = require("../lib/heatmap");
 
 describe("srt", function() {
 	it("parse srt file to retrieve the timestamps", function(done) {
@@ -20,6 +21,22 @@ describe("srt", function() {
 
 });
 
+
+describe("heatmap", function() {
+	it("generate a heatmap", function(done) {
+		var tracks = parseSrt(fs.readFileSync("./test/theoffice.srt").toString());
+		var map = heatmap(tracks);
+		assert.isTrue(Array.isArray(map));
+		map.length.should.equal(623);
+		done();
+	});
+
+});
+
+describe("retriever", function() {
+
+
+});
 
 describe("grouping", function() {
 
