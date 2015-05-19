@@ -43,7 +43,7 @@ describe("retriever", function() {
 			assert.isDefined(sub);
 			assert.isTrue(typeof(sub)=="string");
 			done();
-		})
+		});
 	});
 
 	it("retrieve srt from zip", function(done) {
@@ -55,6 +55,7 @@ describe("retriever", function() {
 		})
 	});
 
+	/*
 	it("retrieve srt from gz", function(done) {
 		// TODO
 		done();
@@ -64,6 +65,7 @@ describe("retriever", function() {
 		// TODO
 		done();
 	});
+	*/
 });
 
 describe("grouping", function() {
