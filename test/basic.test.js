@@ -55,14 +55,18 @@ describe("retriever", function() {
 		})
 	});
 
-	/*
+	
 	it("retrieve srt from gz", function(done) {
-		// TODO
-		done();
+		retrieve("http://dl.opensubtitles.org/en/download/filead/src-api/vrf-07a4118f99/sid-hde04ngpuvva7nqkddrukas676/1952452279.gz", function(err, sub) {
+			assert.isNull(err);
+			assert.isDefined(sub);
+			assert.isTrue(typeof(sub)=="string");
+			done();
+		})
 	});
 
+	/*
 	it("retrieve srt from gz (local file)", function(done) {
-		// TODO
 		done();
 	});
 	*/
