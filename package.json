@@ -1,0 +1,31 @@
+{
+  "name": "subtitles-grouping",
+  "version": "1.0.0",
+  "description": "Groups subtitles (srt files) by sync. Useful when retrieving results from OpenSubtitles.",
+  "main": "cli.js",
+  "scripts": {
+    "test": "mocha --reporter spec --timeout 10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Ivshti/node-subtitles-grouping"
+  },
+  "keywords": [
+    "subtitles",
+    "grouping",
+    "opensubtitles",
+    "srt"
+  ],
+  "author": "Ivo Georgiev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ivshti/node-subtitles-grouping/issues"
+  },
+  "homepage": "https://github.com/Ivshti/node-subtitles-grouping",
+  "dependencies": {
+    "lodash": "3.x.x"
+  },
+  "devDependencies": {
+    "mocha": "2.2.x"
+  }
+}

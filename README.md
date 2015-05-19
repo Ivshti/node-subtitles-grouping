@@ -26,5 +26,9 @@ e.g. `[[1,2,5],[3,4]]`
 
 
 ``.srtFromGz(path/url to gz file) -> readableStream to srt``
+
 ``.srtFromZip(path/url to zip file) -> readableStream to srt``
+
+``.fetchSrt(path/url to gz/zip file or readableStream to srt, function(err,buf) {  })`` 
+
 ``.getHeatmap(readStream to srt)``
