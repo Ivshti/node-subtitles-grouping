@@ -54,4 +54,7 @@ grouper(subs.map(function(x) {
 
     fs.writeFile("./example/index.html", template({ subtitles: _.flatten(results) }));
     console.log("Generated a visualization at example/index.html - "+require("path").resolve("./example/index.html"));
+
+    // If you want to calculate the average heatmap for a group, you can:
+    // require("./lib/grouping").average(_.pluck(group, "heatmap"))
 })

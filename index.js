@@ -1,7 +1,7 @@
 var retriever = require("./lib/retriever");
 var getHeatmap = require("./lib/heatmap");
 var srt = require("./lib/srt");
-var groupSubtitles = require("./lib/grouping");
+var grouping = require("./lib/grouping");
 
 var async = require("async");
 
@@ -18,7 +18,7 @@ module.exports = function grouper(subs, callback) {
 			subs[i].heatmap = getHeatmap(srt.parseString(b));
 		});
 		
-		var groups = groupSubtitles(subs);
+		var groups = grouping.group(subs);
 		callback(null, groups);
 	});
 };
