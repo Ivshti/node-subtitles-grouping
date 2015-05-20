@@ -8,11 +8,14 @@ var movieHashPicks = ["3562019","3963807","3551160","4406605","4115696","3897611
 // First 5 movie hash picks
 var firstPicks = movieHashPicks.slice(0,5);
 
-// First 3 english; only the second is correct
+// First 3 english; only the second one is correct
 var english = ["3562019", "3963807", "3567323"];
 
-// First 3 bulgarian
+// First 2 bulgarianp; first one is incorrect
 var bulgarian = ["3748898", "5522590"];
+
+
+//var correct = ["5522590", "3963807"];
 
 
 var subs = _.uniq(firstPicks.concat(english).concat(bulgarian));
