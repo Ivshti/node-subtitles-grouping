@@ -36,7 +36,7 @@ Other modules
 ```javascript
 // Retrieves an srt string from path/URL to srt, gz or zip
 // Also converts encoding to UTF8
-require("./lib/retriever").fetchSrt(/* path/URL to an srt, gz or zip file */, function(err,buf) {  })`` 
+require("./lib/retriever").retrieveSrt(/* path/URL to an srt, gz or zip file */, function(err,buf) {  })`` 
 
 // Builds a heatmap of an srt file
 require("./lib/heatmap")(/* string in a srt format */) //returns an array heatmap of that srt
