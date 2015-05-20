@@ -5,7 +5,7 @@ var grouping = require("./lib/grouping");
 
 var async = require("async");
 
-module.exports = function grouper(subs, callback) {
+module.exports = function grouper(subs, callback, sensitivity) {
 	subs = subs.map(function(x, i) { 
 		if (typeof(x) == "string") return { uri: x, id: i };
 		return x;
@@ -18,7 +18,7 @@ module.exports = function grouper(subs, callback) {
 			subs[i].heatmap = getHeatmap(srt.parseString(b));
 		});
 		
-		var groups = grouping.group(subs);
+		var groups = grouping.group(subs, sensitivity);
 		callback(null, groups);
 	});
 };
