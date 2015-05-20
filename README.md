@@ -41,3 +41,9 @@ require("./lib/retriever").fetchSrt(/* path/URL to an srt, gz or zip file */, fu
 // Builds a heatmap of an srt file
 require("./lib/heatmap")(/* string in a srt format */) //returns an array heatmap of that srt
 ```
+
+
+
+CLI
+-----
+**TODO**
