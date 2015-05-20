@@ -1,4 +1,4 @@
-# node-subtitles-grouping
+# subtitles-grouping
 Groups subtitles (srt files) by sync. Useful when retrieving results from OpenSubtitles.
 
 Why?
@@ -33,6 +33,17 @@ groupSubtitles([
 
 Other modules
 -------
-``require("./lib/retriever").fetchSrt(path/url to gz/zip file or readableStream to srt, function(err,buf) {  })`` 
+```javascript
+// Retrieves an srt string from path/URL to srt, gz or zip
+// Also converts encoding to UTF8
+require("./lib/retriever").fetchSrt(/* path/URL to an srt, gz or zip file */, function(err,buf) {  })`` 
 
-``require("./lib/heatmap")(string in srt)`` - returns an array heatmap of that srt
+// Builds a heatmap of an srt file
+require("./lib/heatmap")(/* string in a srt format */) //returns an array heatmap of that srt
+```
+
+
+
+CLI
+-----
+**TODO**
