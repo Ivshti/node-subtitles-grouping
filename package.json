@@ -27,7 +27,8 @@
     "request": "2.x.x",
     "iconv-lite": "0.4.x",
     "jschardet": "1.x.x",
-    "unzip": "0.1.x"
+    "unzip": "0.1.x",
+    "async": "0.9.x"
   },
   "devDependencies": {
     "mocha": "2.2.x",
