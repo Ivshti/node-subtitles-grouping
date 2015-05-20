@@ -65,6 +65,18 @@ describe("retriever", function() {
 		})
 	});
 
+	it("retrieve returns error on 404", function(done) {
+		retrieve("http://dl.opensubtitles.org/en/download/filead/foobar.gz", function(err, sub) {
+			assert.isDefined(err);
+			done();
+		})
+	});
+	it("retrieve returns error on non-existing file", function(done) {
+		retrieve("/tmp/foobarfoobarfoobar", function(err, sub) {
+			assert.isDefined(err);
+			done();
+		})
+	});
 	/*
 	it("retrieve srt from gz (local file)", function(done) {
 		done();
