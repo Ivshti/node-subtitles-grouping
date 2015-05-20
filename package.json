@@ -32,6 +32,7 @@
   },
   "devDependencies": {
     "mocha": "2.2.x",
-    "chai": "2.3.x"
+    "chai": "2.3.x",
+    "jade": "1.9.x"
   }
 }

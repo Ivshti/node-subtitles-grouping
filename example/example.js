@@ -1,4 +1,8 @@
+#!/usr/bin/env node
+
 var _ = require("lodash");
+var jade = require("jade");
+var fs = require("fs");
 
 var grouper = require("../index");
 
@@ -17,8 +21,37 @@ var bulgarian = ["3748898", "5522590"];
 
 //var correct = ["5522590", "3963807"];
 
+var GROUP_COLORS = ["red", "green", "brown", "purple", "cyan", "blue"];
+var template = jade.compile(fs.readFileSync("./example/subtitles.jade").toString(), {});
 
 var subs = _.uniq(firstPicks.concat(english).concat(bulgarian));
-grouper(subs.map(function(x) { return "./example/dexter-4x1/"+x+".srt" }), function(err, groups) {
-	console.log(groups)
+grouper(subs.map(function(x) { 
+	return { 
+		uri: "./example/dexter-4x1/"+x+".srt",
+		id: x,
+		moviehash_pick: movieHashPicks.indexOf(x) > -1 
+	}
+}), function(err, groups) {
+	if (err) console.error(err);
+
+	console.log(groups);
+
+	// Sort groups by number of moviehash picks
+	var results = groups.map(function(group) { 
+		group.moviehash_len = group.filter(function(x) { return x.moviehash_pick }).length;
+		return group;
+	})
+	.sort(function(a,b) { 
+		return b.moviehash_len - a.moviehash_len;
+	})
+	// Assign colours to each group
+	.map(function(g,i) {
+		g.forEach(function(s) { 
+			s.color = GROUP_COLORS[i] || "black"; 
+		});
+		return g;
+	});
+
+    fs.writeFile("./example/index.html", template({ subtitles: _.flatten(results) }));
+    console.log("Generated a visualization at example/index.html - "+require("path").resolve("./example/index.html"));
 })
