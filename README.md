@@ -14,21 +14,25 @@ The basic philosophy is that once we have the subtitles grouped, we select the g
 
 API
 -----
-``.groupSubtitles([subtitle1, subtitle2, ...], function(err, groups) { })``
+```javascript
+var groupSubtitles = require("subtitles-grouping");
 
-subtitle can be:
-- URL/path to zip containing srt file (needs to end in .zip) - only first srt will be parsed
-- URL/path to gz compressed srt file (needs to end in .gz)
-- ReadableStream of srt file
+groupSubtitles([
+	{ id: "3562019", uri: "http://dl.opensubtitles.org/en/download/filead/src-api/vrf-52c7037c6b/sid-vo81ml26hrarcsciua7gd44ta6/1952189414.gz" },
+	{ id: "3963807", uri: "./examples/dexter-4x1/3963807.srt" },
+	{ id: "3567323": uri: "./examples/dexter-4x1/3567323.srt" },
+	{ id: "3562666": uri: "./examples/dexter-4x1/3562666.srt" }
+], function(err, groups) { console.log(groups) });
 
-groups will be an array of the groups, each group being an array of subtitle ids, based on their idx
-e.g. `[[1,2,5],[3,4]]`
+// subtitles URI is a URL/local path to an srt file, gzip-compressed srt or a zip containing an srt
 
+// groups will be an array of the groups, each group being an array of subtitles as given to groupSubtitles() but also with a ``.heatmap`` property
 
-``.srtFromGz(path/url to gz file) -> readableStream to srt``
+// see example/example.js
+```
 
-``.srtFromZip(path/url to zip file) -> readableStream to srt``
+Other modules
+-------
+``require("./lib/retriever").fetchSrt(path/url to gz/zip file or readableStream to srt, function(err,buf) {  })`` 
 
-``.fetchSrt(path/url to gz/zip file or readableStream to srt, function(err,buf) {  })`` 
-
-``.getHeatmap(readStream to srt)``
+``require("./lib/heatmap")(string in srt)`` - returns an array heatmap of that srt
