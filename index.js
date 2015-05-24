@@ -5,20 +5,20 @@ var grouping = require("./lib/grouping");
 
 var async = require("async");
 
-module.exports = function grouper(subs, callback, sensitivity) {
+module.exports = function grouper(subs, callback, options) {
 	subs = subs.map(function(x, i) { 
 		if (typeof(x) == "string") return { uri: x, id: i };
 		return x;
 	});
 
-	async.map(subs, function(x, cb) { retriever.retrieveSrt(x.uri, cb) }, function(err, srts) {
+	async.map(subs, function(x, cb) { retriever.retrieveSrt(x.uri, cb, options) }, function(err, srts) {
 		if (err) return callback(err);
 		
 		srts.forEach(function(b, i) { 
 			subs[i].heatmap = getHeatmap(srt.parseString(b));
 		});
 		
-		var groups = grouping.group(subs, sensitivity);
+		var groups = grouping.group(subs, options && options.sensitivity);
 		callback(null, groups);
 	});
 };

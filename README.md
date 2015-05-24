@@ -22,7 +22,7 @@ groupSubtitles([
 	{ id: "3963807", uri: "./examples/dexter-4x1/3963807.srt" },
 	{ id: "3567323": uri: "./examples/dexter-4x1/3567323.srt" },
 	{ id: "3562666": uri: "./examples/dexter-4x1/3562666.srt" }
-], function(err, groups) { console.log(groups) });
+], function(err, groups) { console.log(groups) }, { /* OPTIONS agent, sensitivity */  });
 
 // subtitles URI is a URL/local path to an srt file, gzip-compressed srt or a zip containing an srt
 

@@ -57,4 +57,4 @@ grouper(subs.map(function(x) {
 
     // If you want to calculate the average heatmap for a group, you can:
     // require("./lib/grouping").average(_.pluck(group, "heatmap"))
-}, 0.2)
+}, { sensitivity: 0.2 })
