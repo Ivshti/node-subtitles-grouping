@@ -11,6 +11,12 @@ However, there are users in OpenSubtitles who upload subtitles for a particular 
 
 The basic philosophy is that once we have the subtitles grouped, we select the group that has the most MovieHash matches in it. As long as most MovieHash matches are correct (always), this is the right sync group for that video. That way we weed out the "odd" subtitles and we also pick the correctly synced subtitles from the metadata-based matches (usually 80% of the matches).
 
+Example
+---------
+This is how the example looks like. Each line represents a heatmap of an srt file (by time) and each colour represents a sync group. The brighter lines are picked by moviehash.
+![](https://raw.githubusercontent.com/Ivshti/node-subtitles-grouping/master/example/grouping-example.png)
+You can clearly see how the two groups are different in sync. You can also see how the red group has more bright lines, meaning most moviehash picks are there. This is the correct sync group. The green (wrong) group has one bright line - meaning we just found a wrong moviehash pick and filtered it. If we had also grouped all non-moviehash picks, the correctly synced would be added to the red group.
+
 
 API
 -----
