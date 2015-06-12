@@ -53,3 +53,8 @@ require("./lib/heatmap")(/* string in a srt format */) //returns an array heatma
 CLI
 -----
 **TODO**
+
+
+Contributors
+------
+* Big thanks to OpenSubtitles for providing subtitles dumps to test with
