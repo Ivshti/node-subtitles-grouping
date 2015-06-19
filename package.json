@@ -1,6 +1,6 @@
 {
   "name": "subtitles-grouping",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Groups subtitles (srt files) by sync. Useful when retrieving results from OpenSubtitles.",
   "main": "cli.js",
   "scripts": {
@@ -24,7 +24,7 @@
   "homepage": "https://github.com/Ivshti/node-subtitles-grouping",
   "dependencies": {
     "lodash": "3.x.x",
-    "request": "2.x.x",
+    "needle": "0.9.x",
     "iconv-lite": "0.4.x",
     "jschardet": "1.x.x",
     "unzip": "0.1.x",
