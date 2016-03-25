@@ -1,6 +1,6 @@
 {
   "name": "subtitles-grouping",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Groups subtitles (srt files) by sync. Useful when retrieving results from OpenSubtitles.",
   "main": "cli.js",
   "scripts": {
