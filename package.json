@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/Ivshti/node-subtitles-grouping",
   "dependencies": {
-    "lodash": "3.x.x",
+    "lodash": "3.8.x",
     "needle": "0.9.x",
     "iconv-lite": "0.4.x",
     "charset-detector": "*",
