@@ -27,7 +27,7 @@
     "needle": "0.9.x",
     "iconv-lite": "0.4.x",
     "charset-detector": "*",
-    "unzip": "0.1.x",
+    "zip": "Ivshti/zip",
     "async": "0.9.x"
   },
   "devDependencies": {
