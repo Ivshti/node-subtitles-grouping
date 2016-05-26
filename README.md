@@ -52,8 +52,9 @@ require("./lib/heatmap")(/* string in a srt format */) //returns an array heatma
 
 CLI
 -----
-**TODO**
-
+``` bash
+subtitles-grouping [path to srt] [path to srt] ...
+```
 
 Contributors
 ------
