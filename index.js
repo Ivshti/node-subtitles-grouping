@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var retriever = require("./lib/retriever");
 var getHeatmap = require("./lib/heatmap");
 var srt = require("./lib/srt");
@@ -22,3 +24,11 @@ module.exports = function grouper(subs, callback, options) {
 		callback(null, groups);
 	});
 };
+
+// CLI use
+if (!module.parent) {
+	module.exports(process.argv.slice(2), function(err, res) {
+		if (res) res.forEach(function(g) { g.forEach(function(s) { delete s.heatmap }) });
+		console.log(err || JSON.stringify(res, null, 4))
+	})
+}
