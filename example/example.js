@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var _ = require("lodash");
+var _ = require("underscore");
 var jade = require("jade");
 var fs = require("fs");
 

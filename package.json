@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/Ivshti/node-subtitles-grouping",
   "dependencies": {
-    "lodash": "3.8.x",
+    "underscore": "1.8.x",
     "needle": "1.x.x",
     "iconv-lite": "0.4.x",
     "charset-detector": "*",
