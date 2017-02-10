@@ -15,8 +15,8 @@ describe("srt", function() {
 		Object.keys(tracks).length.should.equal(386);
 		assert.isDefined(tracks[166]);
 		tracks[166].number.should.equal(166);
-		tracks[166].startTime.should.equal(487250);
-		tracks[166].endTime.should.equal(488546);
+		tracks[165].startTime.should.equal(487250);
+		tracks[165].endTime.should.equal(488546);
 
 		done();
 	});
