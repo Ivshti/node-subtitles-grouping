@@ -31,7 +31,7 @@
     "iconv-lite": "0.4.x",
     "charset-detector": "*",
     "zip": "Ivshti/zip",
-    "async": "0.9.x"
+    "async": "1.x.x"
   },
   "devDependencies": {
     "mocha": "2.2.x",
