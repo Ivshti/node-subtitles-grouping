@@ -13,8 +13,9 @@ describe("srt", function() {
 		var tracks = parseSrt(fs.readFileSync("./test/theoffice.srt").toString());
 		assert.isDefined(tracks);
 		Object.keys(tracks).length.should.equal(386);
+		console.log(tracks[165]);
 		assert.isDefined(tracks[166]);
-		tracks[166].number.should.equal(166);
+		tracks[165].number.should.equal(165);
 		tracks[165].startTime.should.equal(487250);
 		tracks[165].endTime.should.equal(488546);
 
@@ -23,13 +24,14 @@ describe("srt", function() {
 
 	it("parse srt file to retrieve the timestamps", function(done) {
 		readSrt("./test/theoffice.srt", function(err, tracks) {
+			console.log(err);
 			assert.isNull(err);
 			assert.isDefined(tracks);
 			Object.keys(tracks).length.should.equal(386);
 			assert.isDefined(tracks[166]);
-			tracks[166].number.should.equal(166);
-			tracks[166].startTime.should.equal(487250);
-			tracks[166].endTime.should.equal(488546);
+			tracks[165].number.should.equal(165);
+			tracks[165].startTime.should.equal(487250);
+			tracks[165].endTime.should.equal(488546);
 
 			done();
 		});
